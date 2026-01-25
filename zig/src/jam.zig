@@ -13,7 +13,12 @@ pub fn main() !void {
     const contents = try std.fs.cwd().readFileAlloc(path, allocator, std.Io.Limit.limited(10 * 1024 * 1024));
     defer allocator.free(contents);
 
-    var parser = try Parser.init(allocator, contents, .{ .source_type = .module });
+    var arena = std.heap.ArenaAllocator.init(allocator);
+    defer arena.deinit();
+
+    const arena_allocator = arena.allocator();
+
+    var parser = try Parser.init(arena_allocator, contents, .{ .source_type = .module });
     defer parser.deinit();
 
     var result = try parser.parse();
