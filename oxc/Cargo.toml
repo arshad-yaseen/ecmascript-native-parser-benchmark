@@ -9,5 +9,9 @@ oxc_parser = "0.102.0"
 oxc_span = "0.102.0"
 
 [profile.release]
+opt-level     = 3
+lto           = "fat"
 codegen-units = 1
-lto = "fat"
+strip         = "symbols"
+debug         = false
+panic         = "abort"
