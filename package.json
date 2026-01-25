@@ -6,8 +6,9 @@
     "build": "bun build:yuku && bun build:oxc",
     "build:yuku": "cd yuku && zig build --release=fast && cp ./zig-out/bin/yuku ../bin",
     "build:oxc": "cd oxc && cargo build --release && cp ./target/release/oxc ../bin",
-    "bench:file-typescript": "hyperfine './bin/yuku files/typescript.js' './bin/oxc files/typescript.js' --export-markdown result-file-typescript.md",
-    "bench:1000": "hyperfine './bin/yuku apps/1000' './bin/oxc apps/1000' --export-markdown result-1000.md"
+    "bench": "bun bench:typescript && bun bench:three",
+    "bench:typescript": "hyperfine './bin/yuku files/typescript.js' './bin/oxc files/typescript.js' --export-markdown result/typescript.md",
+    "bench:three": "hyperfine './bin/yuku files/three.js' './bin/oxc files/three.js' --export-markdown result/three.md"
   },
   "devDependencies": {
     "@types/bun": "latest"
