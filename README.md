@@ -6,10 +6,10 @@ Benchmark ECMAScript parsers implemented in native languages.
 
 | Property | Value |
 |----------|-------|
-| OS | macOS 24.6.0 (arm64) |
-| CPU | Apple M1 (Virtual) |
-| Cores | 3 |
-| Memory | 7 GB |
+| OS | Linux 6.11.0-1018-azure (x64) |
+| CPU | AMD EPYC 7763 64-Core Processor |
+| Cores | 4 |
+| Memory | 16 GB |
 
 ## Parsers
 
@@ -47,10 +47,10 @@ The TypeScript compiler source code bundled into a single file.
 
 | Parser | Mean | Min | Max | MB/s |
 |--------|------|-----|-----|------|
-| Yuku | 26.88 ms | 25.47 ms | 31.96 ms | 291.16 MB/s |
-| Oxc | 28.00 ms | 25.48 ms | 44.84 ms | 279.59 MB/s |
-| SWC | 67.56 ms | 60.37 ms | 104.01 ms | 115.85 MB/s |
-| Jam | 89.46 ms | 69.45 ms | 117.06 ms | 87.49 MB/s |
+| Oxc | 78.71 ms | 77.74 ms | 79.66 ms | 99.45 MB/s |
+| Yuku | 81.75 ms | 80.83 ms | 89.22 ms | 95.75 MB/s |
+| SWC | 161.54 ms | 159.24 ms | 163.93 ms | 48.45 MB/s |
+| Jam | 210.21 ms | 206.69 ms | 213.35 ms | 37.23 MB/s |
 
 ### Three.js
 
@@ -60,10 +60,10 @@ A popular 3D graphics library for the web.
 
 | Parser | Mean | Min | Max | MB/s |
 |--------|------|-----|-----|------|
-| Jam | 9.98 ms | 9.56 ms | 11.67 ms | 196.61 MB/s |
-| Oxc | 11.68 ms | 4.35 ms | 83.83 ms | 168.11 MB/s |
-| Yuku | 13.90 ms | 4.29 ms | 85.65 ms | 141.22 MB/s |
-| SWC | 15.78 ms | 10.94 ms | 56.51 ms | 124.41 MB/s |
+| Oxc | 17.42 ms | 17.11 ms | 17.98 ms | 112.70 MB/s |
+| Yuku | 18.96 ms | 18.68 ms | 20.61 ms | 103.51 MB/s |
+| SWC | 33.24 ms | 32.56 ms | 34.64 ms | 59.05 MB/s |
+| Jam | 33.95 ms | 33.44 ms | 35.17 ms | 57.81 MB/s |
 
 ### Ant Design
 
@@ -73,9 +73,9 @@ A popular React UI component library with enterprise-class design.
 
 | Parser | Mean | Min | Max | MB/s |
 |--------|------|-----|-----|------|
-| Yuku | 31.47 ms | 30.42 ms | 39.21 ms | 172.51 MB/s |
-| Oxc | 33.85 ms | 32.67 ms | 40.05 ms | 160.37 MB/s |
-| SWC | 59.65 ms | 56.44 ms | 70.72 ms | 91.01 MB/s |
+| Oxc | 62.32 ms | 61.49 ms | 69.64 ms | 87.10 MB/s |
+| Yuku | 63.34 ms | 62.50 ms | 73.42 ms | 85.70 MB/s |
+| SWC | 124.22 ms | 122.76 ms | 125.48 ms | 43.70 MB/s |
 
 ## Run Benchmarks
 
