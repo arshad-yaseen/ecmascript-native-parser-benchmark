@@ -6,9 +6,9 @@ Benchmark ECMAScript parsers implemented in native languages.
 
 | Property | Value |
 |----------|-------|
-| OS | Linux 6.11.0-1018-azure (x64) |
-| CPU | AMD EPYC 7763 64-Core Processor |
-| Cores | 4 |
+| OS | macOS 24.5.0 (arm64) |
+| CPU | Apple M3 |
+| Cores | 8 |
 | Memory | 16 GB |
 
 ## Parsers
@@ -84,7 +84,7 @@ A popular React UI component library with enterprise-class design.
 
 - [Bun](https://bun.sh/) - JavaScript runtime and package manager
 - [Rust](https://www.rust-lang.org/tools/install) - For building Rust-based parsers
-- [Zig](https://ziglang.org/download/) - For building Zig-based parsers
+- [Zig](https://ziglang.org/download/) - For building Zig-based parsers (requires nightly/development version)
 - [Hyperfine](https://github.com/sharkdp/hyperfine) - Command-line benchmarking tool
 
 ### Steps

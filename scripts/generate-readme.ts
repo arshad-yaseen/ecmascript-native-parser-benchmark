@@ -199,7 +199,7 @@ function generateRunSection(): string {
 
 - [Bun](https://bun.sh/) - JavaScript runtime and package manager
 - [Rust](https://www.rust-lang.org/tools/install) - For building Rust-based parsers
-- [Zig](https://ziglang.org/download/) - For building Zig-based parsers
+- [Zig](https://ziglang.org/download/) - For building Zig-based parsers (requires nightly/development version)
 - [Hyperfine](https://github.com/sharkdp/hyperfine) - Command-line benchmarking tool
 
 ### Steps
