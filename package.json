@@ -1,0 +1,16 @@
+{
+  "name": "ecmascript-native-parser-benchmark",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "bun build:yuku && bun build:oxc",
+    "build:yuku": "cd yuku && zig build --release=fast && cp ./zig-out/bin/yuku ../bin",
+    "build:oxc": "cd oxc && cargo build --release && cp ./target/release/oxc ../bin"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,14 @@
+[package]
+name = "oxc"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+oxc_allocator = "0.102.0"
+oxc_parser = "0.102.0"
+oxc_span = "0.102.0"
+pico-args = "0.5"
+
+[profile.release]
+codegen-units = 1
+lto = "fat"

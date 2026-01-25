@@ -1,0 +1,17 @@
+.{
+    .name = .yuku_benchmark,
+    .version = "0.0.0",
+    .minimum_zig_version = "0.16.0-dev.731+958faa703",
+    .fingerprint = 0xfdf64d7792cb26d1,
+    .dependencies = .{
+        .yuku = .{
+            .url = "git+https://github.com/arshad-yaseen/yuku/?ref=HEAD#41eeb0e970cdd60791ded5dd08185da8a5c2b5d5",
+            .hash = "yuku-0.0.0-m6rangSZBwDNfYGU6RQGrFuUrfEYUFN7Abj7BwGI5oXR",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+    },
+}
