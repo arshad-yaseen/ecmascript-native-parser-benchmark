@@ -9,7 +9,13 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
 
+    const jam_dep = b.dependency("jam", .{
+        .target = target,
+        .optimize = optimize,
+    });
+
     const yuku = yuku_dep.module("yuku");
+    const jam = jam_dep.module("js");
 
     const yuku_exe = b.addExecutable(.{
         .name = "yuku",
@@ -20,7 +26,18 @@ pub fn build(b: *std.Build) void {
         }),
     });
 
+    const jam_exe = b.addExecutable(.{
+        .name = "jam",
+        .root_module = b.createModule(.{
+            .root_source_file = b.path("src/jam.zig"),
+            .target = target,
+            .optimize = optimize,
+        }),
+    });
+
     yuku_exe.root_module.addImport("yuku", yuku);
+    jam_exe.root_module.addImport("jam", jam);
 
     b.installArtifact(yuku_exe);
+    b.installArtifact(jam_exe);
 }

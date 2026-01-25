@@ -8,6 +8,10 @@
             .url = "git+https://github.com/arshad-yaseen/yuku/?ref=HEAD#7cb3ef00aaf936f6c628880fba8331639f7ee145",
             .hash = "yuku-0.0.0-m6rantigBwBBtCaAlAYKBKGNhPDqRXYT2KnFB6L5w-7r",
         },
+        .jam = .{
+            .url = "git+https://github.com/srijan-paul/jam/?ref=HEAD#ac5d600eaae30a883f0e87d46493d48db9e501a8",
+            .hash = "jam-0.0.0-1QhPrjuTCQAv-vovo-LHd34sPOl96Tn7rHG0UzvKF9bG",
+        },
     },
     .paths = .{
         "build.zig",
