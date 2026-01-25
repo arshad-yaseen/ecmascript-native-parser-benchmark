@@ -4,7 +4,7 @@ const jam = @import("jam");
 const Parser = jam.Parser;
 
 pub fn main() !void {
-    const allocator = std.heap.c_allocator;
+    const allocator = std.heap.page_allocator;
 
     const args = try std.process.argsAlloc(allocator);
     defer std.process.argsFree(allocator, args);
