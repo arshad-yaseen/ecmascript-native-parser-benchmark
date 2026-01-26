@@ -176,8 +176,10 @@ async function generateBenchmarksSection(): Promise<string> {
     const fileKey = key as FileKey;
     const filePath = join(process.cwd(), file.path);
     const fileSize = await getFileSize(filePath);
+    
+    const githubUrl = `https://github.com/arshad-yaseen/ecmascript-native-parser-benchmark/blob/main/${file.path}`;
 
-    lines.push(`### ${file.name}`);
+    lines.push(`### [${file.name}](${githubUrl})`);
     lines.push("");
     lines.push(`${file.description}`);
     lines.push("");
