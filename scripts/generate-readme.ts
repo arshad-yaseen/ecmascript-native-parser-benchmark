@@ -79,10 +79,6 @@ function formatTime(seconds: number): string {
   return `${ms.toFixed(2)} ms`;
 }
 
-function formatThroughput(bytes: number, seconds: number): string {
-  const mbPerSec = bytes / (1024 * 1024) / seconds;
-  return `${mbPerSec.toFixed(2)} MB/s`;
-}
 
 function extractParserName(command: string): string {
   const match = command.match(/\.\/bin\/(\w+)/);
@@ -150,18 +146,17 @@ async function generateBenchmarkTable(
     return 0;
   });
 
-  lines.push("| Parser | Mean | Min | Max | MB/s |");
-  lines.push("|--------|------|-----|-----|------|");
+  lines.push("| Parser | Mean | Min | Max |");
+  lines.push("|--------|------|-----|-----|");
 
   for (const { parser, result } of parserEntries) {
     if (result) {
-      const throughput = formatThroughput(fileSize, result.mean);
       lines.push(
-        `| ${parser.name} | ${formatTime(result.mean)} | ${formatTime(result.min)} | ${formatTime(result.max)} | ${throughput} |`
+        `| ${parser.name} | ${formatTime(result.mean)} | ${formatTime(result.min)} | ${formatTime(result.max)} |`
       );
     } else {
       lines.push(
-        `| ${parser.name} | Failed to parse | - | - | - |`
+        `| ${parser.name} | Failed to parse | - | - |`
       );
     }
   }
