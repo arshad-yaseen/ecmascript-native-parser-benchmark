@@ -49,10 +49,10 @@ The TypeScript compiler source code bundled into a single file.
 
 | Parser | Mean | Min | Max |
 |--------|------|-----|-----|
-| Oxc | 79.40 ms | 78.56 ms | 80.51 ms |
-| Yuku | 83.89 ms | 83.39 ms | 85.35 ms |
-| SWC | 159.07 ms | 157.02 ms | 162.30 ms |
-| Jam | 188.74 ms | 187.98 ms | 190.09 ms |
+| Oxc | 79.91 ms | 79.17 ms | 80.63 ms |
+| Yuku | 80.95 ms | 79.65 ms | 94.02 ms |
+| SWC | 159.97 ms | 157.91 ms | 162.39 ms |
+| Jam | 189.66 ms | 188.88 ms | 190.81 ms |
 
 ### [Three.js](https://github.com/arshad-yaseen/ecmascript-native-parser-benchmark/blob/main/files/three.js)
 
@@ -64,10 +64,10 @@ A popular 3D graphics library for the web.
 
 | Parser | Mean | Min | Max |
 |--------|------|-----|-----|
-| Oxc | 17.39 ms | 16.98 ms | 18.55 ms |
-| Yuku | 19.33 ms | 19.03 ms | 20.99 ms |
-| SWC | 32.26 ms | 31.72 ms | 34.05 ms |
-| Jam | 40.60 ms | 40.15 ms | 41.87 ms |
+| Oxc | 17.49 ms | 17.07 ms | 22.23 ms |
+| Yuku | 18.51 ms | 18.17 ms | 20.63 ms |
+| SWC | 32.71 ms | 32.01 ms | 35.19 ms |
+| Jam | 41.02 ms | 40.50 ms | 42.55 ms |
 
 ### [Ant Design](https://github.com/arshad-yaseen/ecmascript-native-parser-benchmark/blob/main/files/antd.js)
 
@@ -79,9 +79,9 @@ A popular React UI component library with enterprise-class design.
 
 | Parser | Mean | Min | Max |
 |--------|------|-----|-----|
-| Oxc | 62.83 ms | 62.25 ms | 63.95 ms |
-| Yuku | 64.67 ms | 63.97 ms | 69.56 ms |
-| SWC | 120.87 ms | 119.63 ms | 122.55 ms |
+| Yuku | 62.37 ms | 61.48 ms | 69.54 ms |
+| Oxc | 62.92 ms | 62.14 ms | 63.86 ms |
+| SWC | 122.60 ms | 120.87 ms | 124.07 ms |
 | Jam | Failed to parse | - | - |
 
 ## Run Benchmarks
