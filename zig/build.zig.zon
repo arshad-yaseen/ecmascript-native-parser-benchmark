@@ -1,12 +1,12 @@
 .{
     .name = .zig_parsers,
     .version = "0.0.0",
-    .minimum_zig_version = "master",
+    .minimum_zig_version = "0.16.0-dev.2368+380ea6fb5",
     .fingerprint = 0xa1bd1b16d2a0c0b3,
     .dependencies = .{
         .yuku = .{
-            .url = "git+https://github.com/arshad-yaseen/yuku/?ref=HEAD#967d3a483130dbd96a172d8ffd1bb06fc546b2f0",
-            .hash = "yuku-0.0.0-m6ransP4BwA9BpVbJ0y-1xgS8bvSlCZFHg1ahn18aWM8",
+            .url = "git+https://github.com/arshad-yaseen/yuku/?ref=HEAD#c6d34eb1b9eb174677f47a97dfbd0098f5424761",
+            .hash = "yuku-0.0.0-m6ranjygBwCaJLBWzUlmpZ61Q8910-SlBx5a022W21_u",
         },
         .jam = .{
             .url = "git+https://github.com/srijan-paul/jam/?ref=HEAD#ac5d600eaae30a883f0e87d46493d48db9e501a8",
