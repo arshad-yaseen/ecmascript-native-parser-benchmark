@@ -14,7 +14,7 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
 
-    const yuku = yuku_dep.module("js");
+    const yuku_parser = yuku_dep.module("parser");
     const jam = jam_dep.module("js");
 
     const yuku_exe = b.addExecutable(.{
@@ -35,7 +35,7 @@ pub fn build(b: *std.Build) void {
         }),
     });
 
-    yuku_exe.root_module.addImport("yuku", yuku);
+    yuku_exe.root_module.addImport("yuku_parser", yuku_parser);
     jam_exe.root_module.addImport("jam", jam);
 
     b.installArtifact(yuku_exe);
