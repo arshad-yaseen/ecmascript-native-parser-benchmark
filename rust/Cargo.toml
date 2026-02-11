@@ -3,15 +3,43 @@ name = "rust_parsers"
 version = "0.1.0"
 edition = "2024"
 
+[lib]
+name = "rust_parsers"
+path = "src/lib.rs"
+
 [[bin]]
-name = "oxc"
-path = "src/oxc.rs"
+name = "oxc_typescript"
+path = "src/oxc_typescript.rs"
 test    = false
 doctest = false
 
 [[bin]]
-name = "swc"
-path = "src/swc.rs"
+name = "oxc_three"
+path = "src/oxc_three.rs"
+test    = false
+doctest = false
+
+[[bin]]
+name = "oxc_antd"
+path = "src/oxc_antd.rs"
+test    = false
+doctest = false
+
+[[bin]]
+name = "swc_typescript"
+path = "src/swc_typescript.rs"
+test    = false
+doctest = false
+
+[[bin]]
+name = "swc_three"
+path = "src/swc_three.rs"
+test    = false
+doctest = false
+
+[[bin]]
+name = "swc_antd"
+path = "src/swc_antd.rs"
 test    = false
 doctest = false
 

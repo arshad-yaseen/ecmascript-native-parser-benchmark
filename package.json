@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "build": "bun build:zig && bun build:rust",
-    "build:zig": "which zig && cd zig && zig build --release=fast && cp ./zig-out/bin/yuku ./zig-out/bin/jam ../bin",
-    "build:rust": "cd rust && cargo build --release && cp ./target/release/oxc ./target/release/swc ../bin",
+    "build:zig": "cd zig && zig build --release=fast && cp ./zig-out/bin/yuku_typescript ./zig-out/bin/yuku_three ./zig-out/bin/yuku_antd ./zig-out/bin/jam_typescript ./zig-out/bin/jam_three ./zig-out/bin/jam_antd ../bin",
+    "build:rust": "cd rust && cargo build --release && cp ./target/release/oxc_typescript ./target/release/oxc_three ./target/release/oxc_antd ./target/release/swc_typescript ./target/release/swc_three ./target/release/swc_antd ../bin",
     "bench": "bun run build && bun bench:typescript && bun bench:three && bun bench:antd && bun readme",
-    "bench:typescript": "hyperfine --warmup 100 './bin/yuku files/typescript.js' './bin/oxc files/typescript.js' './bin/swc files/typescript.js' './bin/jam files/typescript.js' --export-json result/typescript.json",
-    "bench:three": "hyperfine --warmup 100 './bin/yuku files/three.js' './bin/oxc files/three.js' './bin/swc files/three.js' './bin/jam files/three.js' --export-json result/three.json",
-    "bench:antd": "hyperfine --warmup 100 './bin/yuku files/antd.js' './bin/oxc files/antd.js' './bin/swc files/antd.js' --export-json result/antd.json",
+    "bench:typescript": "hyperfine --warmup 100 './bin/yuku_typescript' './bin/oxc_typescript' './bin/swc_typescript' './bin/jam_typescript' --export-json result/typescript.json",
+    "bench:three": "hyperfine --warmup 100 './bin/yuku_three' './bin/oxc_three' './bin/swc_three' './bin/jam_three' --export-json result/three.json",
+    "bench:antd": "hyperfine --warmup 100 './bin/yuku_antd' './bin/oxc_antd' './bin/swc_antd' --export-json result/antd.json",
     "readme": "bun scripts/generate-readme.ts"
   },
   "devDependencies": {

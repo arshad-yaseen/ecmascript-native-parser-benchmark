@@ -226,7 +226,10 @@ async function generatePerformanceChart(fileKey: FileKey): Promise<string> {
 
 function extractParserName(command: string): string {
   const match = command.match(/\.\/bin\/(\w+)/);
-  return match ? match[1] : "unknown";
+  if (!match) return "unknown";
+  const name = match[1];
+  const underscoreIndex = name.indexOf("_");
+  return underscoreIndex !== -1 ? name.substring(0, underscoreIndex) : name;
 }
 
 async function getFileSize(filePath: string): Promise<number> {
@@ -399,7 +402,7 @@ function generateMethodologySection(): string {
 
 ### How Benchmarks Are Conducted
 
-1. **Build Phase**: All parsers are compiled with release optimizations:
+1. **Build Phase**: All parsers are compiled with release optimizations. Source files are embedded at compile time (Zig \`@embedFile\`, Rust \`include_str!\`) to eliminate file I/O from measurements:
    - Rust parsers: \`cargo build --release\` with LTO, single codegen unit, and symbol stripping
    - Zig parsers: \`zig build --release=fast\`
 
@@ -409,8 +412,7 @@ function generateMethodologySection(): string {
    - Results exported to JSON for analysis
 
 3. **Measurement**: Each benchmark measures the total time to:
-   - Read the source file from disk
-   - Parse the entire file into an AST
+   - Parse the entire file into an AST (source is embedded at compile time, no file I/O)
    - Clean up allocated memory
 
 ### Test Files

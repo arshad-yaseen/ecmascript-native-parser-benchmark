@@ -49,10 +49,10 @@ The TypeScript compiler source code bundled into a single file.
 
 | Parser | Mean | Min | Max | Peak Memory (RSS) |
 |--------|------|-----|-----|----|
-| Oxc | 29.77 ms | 29.25 ms | 42.01 ms | - |
-| Yuku | 32.38 ms | 31.95 ms | 33.17 ms | - |
-| Jam | 54.81 ms | 53.77 ms | 69.87 ms | - |
-| SWC | 57.18 ms | 56.11 ms | 64.06 ms | - |
+| Oxc | 28.22 ms | 27.44 ms | 28.84 ms | - |
+| Yuku | 30.55 ms | 29.72 ms | 32.48 ms | - |
+| Jam | 53.99 ms | 53.02 ms | 56.65 ms | - |
+| SWC | 56.38 ms | 55.30 ms | 57.36 ms | - |
 
 ### [Three.js](https://github.com/arshad-yaseen/ecmascript-native-parser-benchmark/blob/main/files/three.js)
 
@@ -64,10 +64,10 @@ A popular 3D graphics library for the web.
 
 | Parser | Mean | Min | Max | Peak Memory (RSS) |
 |--------|------|-----|-----|----|
-| Yuku | 8.68 ms | 8.36 ms | 9.05 ms | - |
-| Oxc | 8.69 ms | 7.46 ms | 31.71 ms | - |
-| SWC | 14.27 ms | 13.36 ms | 17.88 ms | - |
-| Jam | 14.72 ms | 13.54 ms | 16.60 ms | - |
+| Oxc | 7.55 ms | 7.15 ms | 8.21 ms | - |
+| Yuku | 8.43 ms | 8.04 ms | 9.53 ms | - |
+| SWC | 13.08 ms | 12.62 ms | 13.76 ms | - |
+| Jam | 13.31 ms | 12.88 ms | 13.88 ms | - |
 
 ### [Ant Design](https://github.com/arshad-yaseen/ecmascript-native-parser-benchmark/blob/main/files/antd.js)
 
@@ -79,9 +79,9 @@ A popular React UI component library with enterprise-class design.
 
 | Parser | Mean | Min | Max | Peak Memory (RSS) |
 |--------|------|-----|-----|----|
-| Oxc | 23.99 ms | 23.60 ms | 31.81 ms | - |
-| Yuku | 24.23 ms | 23.89 ms | 25.44 ms | - |
-| SWC | 43.79 ms | 43.37 ms | 44.94 ms | - |
+| Oxc | 23.52 ms | 22.92 ms | 24.68 ms | - |
+| Yuku | 23.94 ms | 23.51 ms | 24.39 ms | - |
+| SWC | 43.84 ms | 43.13 ms | 44.80 ms | - |
 | Jam | Failed to parse | - | - | - |
 
 ## Run Benchmarks
@@ -120,7 +120,7 @@ This will build all parsers and run benchmarks on all test files. Results are sa
 
 ### How Benchmarks Are Conducted
 
-1. **Build Phase**: All parsers are compiled with release optimizations:
+1. **Build Phase**: All parsers are compiled with release optimizations. Source files are embedded at compile time (Zig `@embedFile`, Rust `include_str!`) to eliminate file I/O from measurements:
    - Rust parsers: `cargo build --release` with LTO, single codegen unit, and symbol stripping
    - Zig parsers: `zig build --release=fast`
 
@@ -130,8 +130,7 @@ This will build all parsers and run benchmarks on all test files. Results are sa
    - Results exported to JSON for analysis
 
 3. **Measurement**: Each benchmark measures the total time to:
-   - Read the source file from disk
-   - Parse the entire file into an AST
+   - Parse the entire file into an AST (source is embedded at compile time, no file I/O)
    - Clean up allocated memory
 
 ### Test Files

@@ -1,5 +1,11 @@
 const std = @import("std");
 
+const files = .{
+    .{ .name = "typescript", .path = "../files/typescript.js" },
+    .{ .name = "three", .path = "../files/three.js" },
+    .{ .name = "antd", .path = "../files/antd.js" },
+};
+
 pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
@@ -17,27 +23,33 @@ pub fn build(b: *std.Build) void {
     const yuku_parser = yuku_dep.module("parser");
     const jam = jam_dep.module("js");
 
-    const yuku_exe = b.addExecutable(.{
-        .name = "yuku",
-        .root_module = b.createModule(.{
-            .root_source_file = b.path("src/yuku.zig"),
-            .target = target,
-            .optimize = optimize,
-        }),
-    });
+    inline for (files) |file| {
+        const yuku_exe = b.addExecutable(.{
+            .name = "yuku_" ++ file.name,
+            .root_module = b.createModule(.{
+                .root_source_file = b.path("src/yuku.zig"),
+                .target = target,
+                .optimize = optimize,
+            }),
+        });
+        yuku_exe.root_module.addImport("yuku_parser", yuku_parser);
+        yuku_exe.root_module.addAnonymousImport("source", .{
+            .root_source_file = b.path(file.path),
+        });
+        b.installArtifact(yuku_exe);
 
-    const jam_exe = b.addExecutable(.{
-        .name = "jam",
-        .root_module = b.createModule(.{
-            .root_source_file = b.path("src/jam.zig"),
-            .target = target,
-            .optimize = optimize,
-        }),
-    });
-
-    yuku_exe.root_module.addImport("yuku_parser", yuku_parser);
-    jam_exe.root_module.addImport("jam", jam);
-
-    b.installArtifact(yuku_exe);
-    b.installArtifact(jam_exe);
+        const jam_exe = b.addExecutable(.{
+            .name = "jam_" ++ file.name,
+            .root_module = b.createModule(.{
+                .root_source_file = b.path("src/jam.zig"),
+                .target = target,
+                .optimize = optimize,
+            }),
+        });
+        jam_exe.root_module.addImport("jam", jam);
+        jam_exe.root_module.addAnonymousImport("source", .{
+            .root_source_file = b.path(file.path),
+        });
+        b.installArtifact(jam_exe);
+    }
 }
