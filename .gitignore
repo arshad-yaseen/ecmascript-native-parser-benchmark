@@ -1,5 +1,6 @@
 **/target
 **/zig-out
+**/zig-pkg
 **/.zig-cache
 node_modules
 .DS_Store
