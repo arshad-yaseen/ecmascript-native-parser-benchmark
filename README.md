@@ -17,25 +17,25 @@ Benchmark ECMAScript parsers implemented in native languages.
 
 **Language:** Zig
 
-A high-performance JavaScript and TypeScript toolchain written in pure Zig. It includes a robust parser designed for speed and efficiency.
+A high-performance JavaScript and TypeScript toolchain written in pure Zig. It features an integrated parser designed for speed and efficiency.
 
 ### [Oxc](https://github.com/oxc-project/oxc)
 
 **Language:** Rust
 
-A collection of high-performance tools for JavaScript and TypeScript. While it features an industry-leading parser, Oxc is a comprehensive suite that includes a linter, resolver, transformer, and minifier, all optimized for maximum throughput.
+A suite of high-performance tools for JavaScript and TypeScript. In addition to its parser, it provides a linter, resolver, transformer, and minifier, all built with a focus on performance.
 
 ### [SWC](https://github.com/swc-project/swc)
 
 **Language:** Rust
 
-A comprehensive JavaScript toolchain written in Zig.
+An extensible, Rust-based platform for compiling, bundling, and minifying JavaScript and TypeScript. It serves as a fast alternative to Babel for large-scale production environments.
 
 ### [Jam](https://github.com/srijan-paul/jam)
 
 **Language:** Zig
 
-A JavaScript toolchain written in Zig featuring a parser, linter, formatter, printer, and vulnerability scanner.
+A JavaScript toolchain written in Zig that includes a parser, linter, formatter, and printer, as well as an integrated vulnerability scanner.
 
 ## Benchmarks
 
