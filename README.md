@@ -6,7 +6,7 @@ Benchmark ECMAScript parsers implemented in native languages.
 
 | Property | Value |
 |----------|-------|
-| OS | Linux 6.11.0-1018-azure (x64) |
+| OS | Linux 6.14.0-1017-azure (x64) |
 | CPU | AMD EPYC 7763 64-Core Processor |
 | Cores | 4 |
 | Memory | 16 GB |
@@ -17,29 +17,29 @@ Benchmark ECMAScript parsers implemented in native languages.
 
 **Language:** Zig
 
-A high-performance JavaScript and TypeScript toolchain written in pure Zig. It features an integrated parser designed for speed and efficiency.
+A high-performance & spec-compliant JavaScript/TypeScript compiler written in Zig.
 
 ### [Oxc](https://github.com/oxc-project/oxc)
 
 **Language:** Rust
 
-A suite of high-performance tools for JavaScript and TypeScript. In addition to its parser, it provides a linter, resolver, transformer, and minifier, all built with a focus on performance.
+A high-performance JavaScript and TypeScript parser written in Rust.
 
 ### [SWC](https://github.com/swc-project/swc)
 
 **Language:** Rust
 
-An extensible, Rust-based platform for compiling, bundling, and minifying JavaScript and TypeScript. It serves as a fast alternative to Babel for large-scale production environments.
+An extensible Rust-based platform for compiling and bundling JavaScript and TypeScript.
 
 ### [Jam](https://github.com/srijan-paul/jam)
 
 **Language:** Zig
 
-A JavaScript toolchain written in Zig that includes a parser, linter, formatter, and printer, as well as an integrated vulnerability scanner.
+A JavaScript toolchain written in Zig featuring a parser, linter, formatter, printer, and vulnerability scanner.
 
 ## Benchmarks
 
-### [TypeScript](https://github.com/arshad-yaseen/ecmascript-native-parser-benchmark/blob/main/files/typescript.js)
+### [TypeScript](https://raw.githubusercontent.com/yuku-toolchain/parser-benchmark-files/refs/heads/main/typescript.js)
 
 The TypeScript compiler source code bundled into a single file.
 
@@ -49,12 +49,12 @@ The TypeScript compiler source code bundled into a single file.
 
 | Parser | Mean | Min | Max | Peak Memory (RSS) |
 |--------|------|-----|-----|----|
-| Oxc | 74.70 ms | 73.81 ms | 76.28 ms | 52.9 MB |
-| Yuku | 77.43 ms | 76.99 ms | 78.31 ms | 39.6 MB |
-| SWC | 161.26 ms | 158.27 ms | 165.52 ms | 89.8 MB |
-| Jam | 186.45 ms | 184.78 ms | 190.87 ms | 186.1 MB |
+| Oxc | 76.74 ms | 75.68 ms | 77.65 ms | 52.8 MB |
+| Yuku | 78.71 ms | 78.22 ms | 79.64 ms | 39.7 MB |
+| SWC | 163.22 ms | 162.29 ms | 164.56 ms | 89.7 MB |
+| Jam | 198.75 ms | 198.02 ms | 200.60 ms | 186.1 MB |
 
-### [Three.js](https://github.com/arshad-yaseen/ecmascript-native-parser-benchmark/blob/main/files/three.js)
+### [Three.js](https://raw.githubusercontent.com/yuku-toolchain/parser-benchmark-files/refs/heads/main/three.js)
 
 A popular 3D graphics library for the web.
 
@@ -64,12 +64,12 @@ A popular 3D graphics library for the web.
 
 | Parser | Mean | Min | Max | Peak Memory (RSS) |
 |--------|------|-----|-----|----|
-| Oxc | 16.62 ms | 16.25 ms | 24.40 ms | 13.4 MB |
-| Yuku | 18.32 ms | 17.92 ms | 22.75 ms | 10.3 MB |
-| SWC | 34.55 ms | 33.18 ms | 35.34 ms | 22.4 MB |
-| Jam | 42.18 ms | 41.62 ms | 43.71 ms | 39.5 MB |
+| Oxc | 16.59 ms | 16.20 ms | 17.84 ms | 13.4 MB |
+| Yuku | 18.36 ms | 18.01 ms | 19.12 ms | 10.3 MB |
+| SWC | 33.72 ms | 32.93 ms | 35.57 ms | 22.4 MB |
+| Jam | 43.79 ms | 43.13 ms | 45.02 ms | 39.5 MB |
 
-### [Ant Design](https://github.com/arshad-yaseen/ecmascript-native-parser-benchmark/blob/main/files/antd.js)
+### [Ant Design](https://raw.githubusercontent.com/yuku-toolchain/parser-benchmark-files/refs/heads/main/antd.js)
 
 A popular React UI component library with enterprise-class design.
 
@@ -79,9 +79,9 @@ A popular React UI component library with enterprise-class design.
 
 | Parser | Mean | Min | Max | Peak Memory (RSS) |
 |--------|------|-----|-----|----|
-| Oxc | 59.43 ms | 58.93 ms | 59.92 ms | 41.0 MB |
-| Yuku | 59.81 ms | 59.28 ms | 60.73 ms | 30.5 MB |
-| SWC | 126.19 ms | 122.93 ms | 128.64 ms | 67.3 MB |
+| Yuku | 60.74 ms | 60.20 ms | 61.91 ms | 30.5 MB |
+| Oxc | 61.24 ms | 60.54 ms | 62.22 ms | 41.0 MB |
+| SWC | 127.51 ms | 125.49 ms | 130.29 ms | 67.3 MB |
 | Jam | Failed to parse | - | - | - |
 
 ## Run Benchmarks
